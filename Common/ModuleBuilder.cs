@@ -73,7 +73,7 @@ namespace Common
         {
             var buildFolder = Directory.GetParent(buildFile).FullName;
             var target = buildFile.EndsWith(".sln") ? Path.GetFileName(buildFile) : "";
-            var command = $"{nugetRunCommand} restore {target} -Verbosity {(buildSettings.ShowOutput ? "normal" : "quiet")}";
+            var command = $"{nugetRunCommand} restore {target} -Verbosity detailed";
             log.LogInformation(command);
 
             var runner = PrepareShellRunner();
